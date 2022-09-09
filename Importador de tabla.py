@@ -4,6 +4,7 @@ from tkinter.messagebox import showinfo
 from tkinter import filedialog as fd
 import pandas as pd
 import pyodbc
+import openpyxl
 
 # root window
 root = tk.Tk()
@@ -38,8 +39,8 @@ def download_clicked():
     arch = select_file()
 
 
-    # Importar CSV
-    data = pd.read_csv (arch)   
+    # Importar excel/CSV
+    data = pd.read_excel (arch)   
     df = pd.DataFrame(data)
     #crea boton que al apretarlo ejecute todo este script siguiente
     # Connectar a SQL Server
